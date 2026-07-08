@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { useIsMobile } from "@/lib/ui/theme";
 
 const LINKS = [
-  { href: "/", label: "LNA" },
   { href: "/about", label: "About" },
   { href: "/mission", label: "Mission" },
   { href: "/systems", label: "Systems" },
@@ -57,10 +56,7 @@ export default function SiteNav({
     >
       {LINKS.map((link, i) => {
         const active =
-          highlightActive &&
-          (link.href === "/"
-            ? pathname === "/"
-            : pathname.startsWith(link.href));
+          highlightActive && pathname.startsWith(link.href);
 
         return (
           <span
