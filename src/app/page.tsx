@@ -1,5 +1,6 @@
 "use client";
 
+import PageBrandHeader from "@/components/PageBrandHeader";
 import PageShell from "@/components/PageShell";
 import SiteNav from "@/components/SiteNav";
 
@@ -8,7 +9,7 @@ export default function HomePage() {
     <PageShell showNav={false} mutedFooter>
       {(S) => (
         <section style={S.hero}>
-          <h1 style={S.h1}>LNA</h1>
+          <PageBrandHeader title="LNA" titleStyle={S.h1} showLogo={false} />
           <div style={S.heroMeta}>The OS of Human Thinking</div>
           <div style={{ marginTop: 96 }}>
             <SiteNav compact highlightActive={false} />

@@ -1,6 +1,6 @@
 "use client";
 
-import HelixMark from "@/components/HelixMark";
+import PageBrandHeader from "@/components/PageBrandHeader";
 import PageShell from "@/components/PageShell";
 
 const LABS = [
@@ -8,8 +8,8 @@ const LABS = [
     name: "Studio1216",
     title: "\uAC10\uC815\u00B7\uACBD\uD5D8 OS \uC5F0\uAD6C\uC18C.",
     desc: "\uC0AC\uB78C\uC758 \uAC10\uC815\uACFC \uC11C\uC0AC\uAC00 \uB9CC\uB4E4\uC5B4\uB0B4\uB294 \uC6C0\uC9C1\uC784\uC744\n\uD30C\uB3D9\uC73C\uB85C \uC2DC\uAC01\uD654\uD569\uB2C8\uB2E4.",
-    link: "https://www.lna-lsr.app",
-    linkLabel: "www.lna-lsr.app",
+    link: "https://studio1216.app",
+    linkLabel: "studio1216.app",
   },
   {
     name: "TextLab",
@@ -29,8 +29,7 @@ export default function AboutPage() {
       {(S) => (
         <>
           <section style={S.pageHero}>
-            <HelixMark size={14} />
-            <h1 style={S.pageTitle}>LNA</h1>
+            <PageBrandHeader title="LNA" titleStyle={S.pageTitle} />
             <p style={S.body}>
               {
                 "LNA\uB294 \uC778\uAC04\uC758 \uC0DD\uAC01\u00B7\uAC10\uC815\u00B7\uC5B8\uC5B4\uB97C \uD558\uB098\uC758\n\uD30C\uB3D9\uC73C\uB85C(Wave) \uC774\uD574\uD558\uB294 \uAE30\uC5C5\uC785\uB2C8\uB2E4.\n\n\n\uC6B0\uB9AC\uB294 \uC778\uAC04\uC758 \uC2E0\uD638\uB97C \uC77D\uACE0,\n\uADF8 \uD750\uB984\uACFC \uC758\uBBF8\uB97C \uBD84\uC11D\uD574\n\uC0C8\uB85C\uC6B4 \uC778\uC9C0 \uAE30\uC220\uC744 \uC124\uACC4\uD569\uB2C8\uB2E4."

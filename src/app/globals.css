@@ -71,3 +71,11 @@ a {
     letter-spacing: 0.08em;
   }
 }
+
+.page-brand-header {
+  transition: opacity 160ms ease;
+}
+
+.page-brand-header:hover {
+  opacity: 0.72;
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import HelixMark from "@/components/HelixMark";
+import PageBrandHeader from "@/components/PageBrandHeader";
 import PageShell from "@/components/PageShell";
 
 const SYSTEMS = [
@@ -52,8 +52,7 @@ export default function SystemsPage() {
       {(S) => (
         <>
           <section style={S.pageHero}>
-            <HelixMark size={14} />
-            <h1 style={S.pageTitle}>Systems</h1>
+            <PageBrandHeader title="Systems" titleStyle={S.pageTitle} />
             <p style={S.body}>
               {
                 "LNA Corp\uC758 \uAE30\uC220\uC740 \uB2E8\uC77C\uD55C Wave Theory\n\uC704\uC5D0\uC11C \uC5EC\uB7EC \uC2DC\uC2A4\uD15C\uACFC \uC5D4\uC9C4\uC73C\uB85C \uD655\uC7A5\uB429\uB2C8\uB2E4."

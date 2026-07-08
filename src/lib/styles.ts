@@ -26,10 +26,10 @@ export function makeStyles(isMobile: boolean) {
     minHeight: "100svh",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "center",
     textAlign: "center",
-    padding: isMobile ? "20px 0 96px" : "20px 0 112px",
+    padding: isMobile ? "30svh 0 96px" : "34svh 0 112px",
   };
 
   const pageHero: React.CSSProperties = {
@@ -38,7 +38,7 @@ export function makeStyles(isMobile: boolean) {
     justifyContent: "flex-start",
     alignItems: "center",
     textAlign: "center",
-    padding: isMobile ? "88px 0 72px" : "120px 0 96px",
+    padding: isMobile ? "128px 0 72px" : "168px 0 96px",
   };
 
   const block: React.CSSProperties = {

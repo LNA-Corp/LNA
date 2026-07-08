@@ -1,6 +1,6 @@
 "use client";
 
-import HelixMark from "@/components/HelixMark";
+import PageBrandHeader from "@/components/PageBrandHeader";
 import PageShell from "@/components/PageShell";
 
 export default function MissionPage() {
@@ -9,8 +9,7 @@ export default function MissionPage() {
       {(S) => (
         <>
           <section style={S.pageHero}>
-            <HelixMark size={14} />
-            <h1 style={S.pageTitle}>Mission</h1>
+            <PageBrandHeader title="Mission" titleStyle={S.pageTitle} />
             <div style={S.quote}>
               {
                 "\u201CTo reveal the human mind as it truly is,\nand to bring comfort\u201D"
