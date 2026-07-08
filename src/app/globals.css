@@ -1,0 +1,73 @@
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: #111;
+  background: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.site-nav__link {
+  color: rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 450;
+  letter-spacing: 0.28em;
+  transition: color 160ms ease;
+}
+
+.site-nav__link:hover {
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.site-nav__link.is-active {
+  color: rgba(0, 0, 0, 0.78);
+  font-weight: 500;
+}
+
+.site-nav__sep {
+  color: rgba(0, 0, 0, 0.18);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0;
+  user-select: none;
+}
+
+.site-nav--compact .site-nav__link {
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 639px) {
+  .site-nav__link {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+  }
+
+  .site-nav--compact .site-nav__link {
+    letter-spacing: 0.08em;
+  }
+}
