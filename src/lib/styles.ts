@@ -22,6 +22,8 @@ export function makeStyles(isMobile: boolean) {
     flexDirection: "column",
   };
 
+  const lineStep = isMobile ? Math.round(13.5 * 2.35) : Math.round(14 * 2.35);
+
   const hero: React.CSSProperties = {
     minHeight: "100svh",
     display: "flex",
@@ -29,7 +31,9 @@ export function makeStyles(isMobile: boolean) {
     justifyContent: "flex-start",
     alignItems: "center",
     textAlign: "center",
-    padding: isMobile ? "32svh 0 96px" : "36svh 0 112px",
+    padding: isMobile
+      ? `calc(32svh - ${lineStep}px) 0 96px`
+      : `calc(36svh - ${lineStep}px) 0 112px`,
   };
 
   const subpageHero: React.CSSProperties = {
@@ -43,8 +47,6 @@ export function makeStyles(isMobile: boolean) {
       ? `calc(36svh - ${Math.round(14.5 * 2.2 * 3)}px) 0 48px`
       : `calc(40svh - ${Math.round(15 * 2.2 * 3)}px) 0 56px`,
   };
-
-  const lineStep = isMobile ? Math.round(13.5 * 2.35) : Math.round(14 * 2.35);
 
   const subpageIntro: React.CSSProperties = {
     display: "flex",
@@ -227,7 +229,7 @@ export function makeStyles(isMobile: boolean) {
 
   const footer: React.CSSProperties = {
     marginTop: "auto",
-    paddingTop: 56,
+    paddingTop: 56 + lineStep,
     paddingBottom: isMobile ? 18 : 24,
     color: "rgba(0,0,0,0.38)",
     fontSize: 11,
