@@ -9,7 +9,11 @@ export default function MissionPage() {
     <PageShell>
       {(S) => (
         <>
-          <SubpageHero style={S.subpageIntro} scrollTargetId="philosophy">
+          <SubpageHero
+            style={S.subpageIntroWithTail}
+            scrollTargetId="philosophy"
+            hintMarginTop={S.scrollHintMargin}
+          >
             <PageBrandHeader title="Mission" titleStyle={S.pageTitle} />
             <div style={S.quote}>
               {
@@ -18,10 +22,9 @@ export default function MissionPage() {
             </div>
           </SubpageHero>
 
-          <section id="philosophy" style={{ ...S.block, paddingTop: S.sectionGap }}>
-            <div style={S.sectionDivider}>
-              <div style={S.sectionLabel}>Philosophy</div>
-            </div>
+          <section id="philosophy" style={S.contentAfterIntro}>
+            <div style={S.contentRule} aria-hidden="true" />
+            <div style={S.sectionLabel}>Philosophy</div>
             <div style={{ ...S.quoteKo, marginTop: S.paragraphGapTight }}>
               {
                 "\u201C\uC228\uAE30\uC9C0 \uC54A\uB294 \uAC10\uC815.\n\uAFB8\uBBF8\uC9C0 \uC54A\uC740 \uC778\uAC04.\n\uC774\uD574\uAC00 \uB9CC\uB4DC\uB294 \uAC00\uC7A5 \uAE4A\uC740 \uC704\uB85C.\u201D"

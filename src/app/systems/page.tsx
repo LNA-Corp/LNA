@@ -9,16 +9,16 @@ const SYSTEMS = [
   {
     name: "LNA",
     meta: "Core Theory",
-    desc: "\uC778\uAC04\uC758 \uAC10\uC815\u00B7\uC5B8\uC5B4\u00B7\uC0AC\uACE0\uB97C \uD558\uB098\uC758 Wave Architecture\uB85C \uC7AC\uAD6C\uC131\uD55C\nLNA Corp \uAE30\uC220\uC758 \uADFC\uBCF8 OS.",
+    desc: "\uC778\uAC04\uC758 \uAC10\uC815\u00B7\uC5B8\uC5B4\u00B7\uC0AC\uACE0\uB97C \uD558\uB098\uC758 Wave Architecture\uB85C \uC7AC\uAD6C\uC131\uD55C LNA Corp \uAE30\uC220\uC758 \uADFC\uBCF8 OS.",
   },
   {
     name: "LSR",
     meta: "Life Self Reflection",
-    desc: "\uC0AC\uB78C\uC758 \uB0B4\uBA74\uC744 \uC774\uB8E8\uB294\n\uB2E4\uC591\uD55C \uCD95\uC744 \uC77D\uC5B4\uB0B4\uACE0, \uAC10\uC815\u00B7\uAD00\uACC4\u00B7\uC2EC\uB9AC\uC758 \uD328\uD134\uC744 \uBA85\uD655\uD55C \uD30C\uB3D9 \uAD6C\uC870\uB85C \uB4DC\uB7EC\uB0B4\uB294 OS.",
+    desc: "\uC0AC\uB78C\uC758 \uB0B4\uBA74\uC744 \uC774\uB8E8\uB294\n\uB2E4\uC591\uD55C \uCD95\uC744 \uC77D\uC5B4\uB0B4\uACE0, \uAC10\uC815\u00B7\uAD00\uACC4\u00B7\uC2EC\uB9AC\uC758\n\uD328\uD134\uC744\n\uBA85\uD655\uD55C \uD30C\uB3D9\uAD6C\uC870\uB85C \uB4DC\uB7EC\uB0B4\uB294 OS.",
     projects: [
       {
         title: "RDI - Relationship Dynamics Indicator",
-        desc: "LSR\uC758 \uCCAB \uD504\uB85C\uC81D\uD2B8\uB85C, \uAC10\uC815\u00B7\uAD00\uACC4 \uC131\uD5A5\uC744 \uD30C\uB3D9 \uAE30\uBC18\uC73C\uB85C \uBD84\uC11D\uD569\uB2C8\uB2E4.",
+        desc: "LSR\uC758 \uCCAB \uD504\uB85C\uC81D\uD2B8\uB85C, \uAC10\uC815\u00B7\uAD00\uACC4\n\uC131\uD5A5\uC744\n\uD30C\uB3D9 \uAE30\uBC18\uC73C\uB85C \uBD84\uC11D\uD569\uB2C8\uB2E4.",
       },
       {
         title: "DualPulse",
@@ -66,7 +66,7 @@ function ProjectList({
   projects: ReadonlyArray<{ title: string; desc: string }>;
 }) {
   return (
-    <div style={{ marginTop: 48 }}>
+    <div style={{ marginTop: 48, width: "100%", maxWidth: 360 }}>
       <div
         style={{
           fontSize: 12,
@@ -79,18 +79,15 @@ function ProjectList({
         Project
       </div>
       {projects.map((project, idx) => (
-        <div key={project.title} style={{ marginTop: idx === 0 ? 0 : 28 }}>
-          <p
-            style={{
-              ...S.itemDesc,
-              marginTop: 0,
-              color: "rgba(0,0,0,0.52)",
-            }}
-          >
-            {project.title}
-          </p>
-          <p style={{ ...S.itemDesc, marginTop: 10 }}>{project.desc}</p>
-        </div>
+        <p
+          key={project.title}
+          style={{
+            ...S.itemDesc,
+            marginTop: idx === 0 ? 0 : 28,
+          }}
+        >
+          {`${project.title}\n${project.desc}`}
+        </p>
       ))}
     </div>
   );
@@ -101,7 +98,11 @@ export default function SystemsPage() {
     <PageShell>
       {(S) => (
         <>
-          <SubpageHero style={S.subpageIntro} scrollTargetId="systems-content">
+          <SubpageHero
+            style={S.subpageIntroWithTail}
+            scrollTargetId="systems-content"
+            hintMarginTop={S.scrollHintMargin}
+          >
             <PageBrandHeader title="Systems" titleStyle={S.pageTitle} />
             <p style={S.lead}>
               {
@@ -114,8 +115,9 @@ export default function SystemsPage() {
             <section
               key={sys.name}
               id={idx === 0 ? "systems-content" : undefined}
-              style={S.block}
+              style={idx === 0 ? S.contentAfterIntro : S.block}
             >
+              {idx === 0 ? <div style={S.contentRule} aria-hidden="true" /> : null}
               <h2 style={S.itemTitle}>{sys.name}</h2>
               <div style={S.itemMeta}>{sys.meta}</div>
               <p style={S.itemDesc}>{sys.desc}</p>

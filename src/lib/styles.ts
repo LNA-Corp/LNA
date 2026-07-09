@@ -44,6 +44,8 @@ export function makeStyles(isMobile: boolean) {
       : `calc(40svh - ${Math.round(15 * 2.2 * 3)}px) 0 56px`,
   };
 
+  const lineStep = isMobile ? Math.round(13.5 * 2.35) : Math.round(14 * 2.35);
+
   const subpageIntro: React.CSSProperties = {
     display: "flex",
     flexDirection: "column",
@@ -53,6 +55,11 @@ export function makeStyles(isMobile: boolean) {
     padding: isMobile
       ? `calc(36svh - ${Math.round(14.5 * 2.2 * 3)}px) 0 72px`
       : `calc(40svh - ${Math.round(15 * 2.2 * 3)}px) 0 88px`,
+  };
+
+  const subpageIntroWithTail: React.CSSProperties = {
+    ...subpageIntro,
+    paddingBottom: isMobile ? 72 + lineStep : 88 + lineStep,
   };
 
   const block: React.CSSProperties = {
@@ -66,6 +73,16 @@ export function makeStyles(isMobile: boolean) {
   const sectionGap = isMobile ? 96 : 120;
   const paragraphGap = isMobile ? 72 : 96;
   const paragraphGapTight = isMobile ? 48 : 64;
+  const scrollHintMargin = 34 + lineStep;
+  const introTail = lineStep;
+  const contentAfterIntro: React.CSSProperties = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    textAlign: "center",
+    paddingTop: sectionGap,
+    paddingBottom: isMobile ? 112 : 144,
+  };
 
   const h1: React.CSSProperties = {
     margin: 0,
@@ -161,6 +178,13 @@ export function makeStyles(isMobile: boolean) {
     paddingTop: paragraphGapTight,
   };
 
+  const contentRule: React.CSSProperties = {
+    width: "100%",
+    maxWidth: 420,
+    borderTop: "1px solid rgba(0,0,0,0.05)",
+    marginBottom: paragraphGap,
+  };
+
   const itemTitle: React.CSSProperties = {
     margin: 0,
     fontSize: isMobile ? 16.5 : 17.5,
@@ -207,7 +231,9 @@ export function makeStyles(isMobile: boolean) {
     hero,
     subpageHero,
     subpageIntro,
+    subpageIntroWithTail,
     block,
+    contentAfterIntro,
     h1,
     pageTitle,
     heroMeta,
@@ -217,9 +243,13 @@ export function makeStyles(isMobile: boolean) {
     quoteKo,
     sectionLabel,
     sectionDivider,
+    contentRule,
     sectionGap,
     paragraphGap,
     paragraphGapTight,
+    lineStep,
+    scrollHintMargin,
+    introTail,
     itemTitle,
     itemMeta,
     itemDesc,
