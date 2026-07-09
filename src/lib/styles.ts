@@ -3,10 +3,10 @@ import type React from "react";
 export function makeStyles(isMobile: boolean) {
   const wrap: React.CSSProperties = {
     minHeight: "100vh",
-    background: "#ffffff",
-    color: "#111",
+    background: "#fbfaf7",
+    color: "#161412",
     fontFamily:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+      'var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
     overflowX: "hidden",
     display: "flex",
     flexDirection: "column",
@@ -46,25 +46,33 @@ export function makeStyles(isMobile: boolean) {
     flexDirection: "column",
     alignItems: "center",
     textAlign: "center",
-    padding: isMobile ? "96px 0" : "128px 0",
+    padding: isMobile ? "112px 0" : "144px 0",
   };
+
+  const sectionGap = isMobile ? 96 : 120;
+  const paragraphGap = isMobile ? 72 : 96;
+  const paragraphGapTight = isMobile ? 48 : 64;
 
   const h1: React.CSSProperties = {
     margin: 0,
-    fontSize: isMobile ? 50 : 68,
-    lineHeight: 1,
-    letterSpacing: "0.08em",
-    color: "rgba(0,0,0,0.88)",
-    fontWeight: 700,
+    fontFamily: "var(--font-serif), serif",
+    fontSize: isMobile ? 52 : 72,
+    lineHeight: 1.05,
+    letterSpacing: "0.02em",
+    color: "rgba(0,0,0,0.9)",
+    fontWeight: 600,
+    fontStyle: "italic",
   };
 
   const pageTitle: React.CSSProperties = {
     margin: 0,
-    fontSize: isMobile ? 24 : 28,
+    fontFamily: "var(--font-serif), serif",
+    fontSize: isMobile ? 26 : 30,
     lineHeight: 1.2,
-    letterSpacing: "0.18em",
-    color: "rgba(0,0,0,0.84)",
-    fontWeight: 650,
+    letterSpacing: "0.06em",
+    color: "rgba(0,0,0,0.86)",
+    fontWeight: 600,
+    fontStyle: "italic",
   };
 
   const heroMeta: React.CSSProperties = {
@@ -72,15 +80,27 @@ export function makeStyles(isMobile: boolean) {
     fontSize: isMobile ? 14.5 : 15.5,
     fontWeight: 400,
     letterSpacing: "0.14em",
-    color: "rgba(0,0,0,0.52)",
+    color: "rgba(0,0,0,0.48)",
+  };
+
+  const lead: React.CSSProperties = {
+    margin: `${isMobile ? 56 : 64}px 0 0`,
+    fontSize: isMobile ? 14.5 : 15,
+    lineHeight: 2.2,
+    letterSpacing: "0.08em",
+    color: "rgba(0,0,0,0.58)",
+    fontWeight: 400,
+    wordBreak: "keep-all",
+    maxWidth: 420,
+    whiteSpace: "pre-line",
   };
 
   const body: React.CSSProperties = {
-    margin: "52px 0 0",
-    fontSize: isMobile ? 14 : 14.5,
-    lineHeight: 2.4,
-    letterSpacing: "0.12em",
-    color: "rgba(0,0,0,0.52)",
+    margin: 0,
+    fontSize: isMobile ? 13.5 : 14,
+    lineHeight: 2.35,
+    letterSpacing: "0.06em",
+    color: "rgba(0,0,0,0.46)",
     fontWeight: 400,
     wordBreak: "keep-all",
     maxWidth: 420,
@@ -88,14 +108,28 @@ export function makeStyles(isMobile: boolean) {
   };
 
   const quote: React.CSSProperties = {
-    margin: "44px 0 0",
-    fontSize: isMobile ? 15.5 : 16.5,
-    lineHeight: 2.15,
-    letterSpacing: "0.12em",
+    margin: `${isMobile ? 44 : 48}px 0 0`,
+    fontFamily: "var(--font-serif), serif",
+    fontStyle: "italic",
+    fontSize: isMobile ? 17 : 19,
+    lineHeight: 1.85,
+    letterSpacing: "0.02em",
+    color: "rgba(0,0,0,0.68)",
+    fontWeight: 500,
+    maxWidth: 460,
+    whiteSpace: "pre-line",
+  };
+
+  const quoteKo: React.CSSProperties = {
+    margin: `${isMobile ? 44 : 48}px 0 0`,
+    fontSize: isMobile ? 16 : 17,
+    lineHeight: 2,
+    letterSpacing: "0.06em",
     color: "rgba(0,0,0,0.62)",
     fontWeight: 400,
     maxWidth: 460,
     whiteSpace: "pre-line",
+    wordBreak: "keep-all",
   };
 
   const sectionLabel: React.CSSProperties = {
@@ -105,6 +139,13 @@ export function makeStyles(isMobile: boolean) {
     color: "rgba(0,0,0,0.42)",
     textTransform: "none",
     marginBottom: 0,
+  };
+
+  const sectionDivider: React.CSSProperties = {
+    width: "100%",
+    maxWidth: 420,
+    borderTop: "1px solid rgba(0,0,0,0.05)",
+    paddingTop: paragraphGapTight,
   };
 
   const itemTitle: React.CSSProperties = {
@@ -127,8 +168,8 @@ export function makeStyles(isMobile: boolean) {
   const itemDesc: React.CSSProperties = {
     marginTop: 16,
     fontSize: isMobile ? 13.5 : 14,
-    lineHeight: 2.15,
-    letterSpacing: "0.12em",
+    lineHeight: 2.2,
+    letterSpacing: "0.06em",
     color: "rgba(0,0,0,0.46)",
     fontWeight: 400,
     whiteSpace: "pre-line",
@@ -156,9 +197,15 @@ export function makeStyles(isMobile: boolean) {
     h1,
     pageTitle,
     heroMeta,
+    lead,
     body,
     quote,
+    quoteKo,
     sectionLabel,
+    sectionDivider,
+    sectionGap,
+    paragraphGap,
+    paragraphGapTight,
     itemTitle,
     itemMeta,
     itemDesc,

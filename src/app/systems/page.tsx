@@ -53,7 +53,7 @@ export default function SystemsPage() {
         <>
           <section style={S.pageHero}>
             <PageBrandHeader title="Systems" titleStyle={S.pageTitle} />
-            <p style={S.body}>
+            <p style={S.lead}>
               {
                 "LNA Corp\uC758 \uAE30\uC220\uC740 \uB2E8\uC77C\uD55C Wave Theory\n\uC704\uC5D0\uC11C \uC5EC\uB7EC \uC2DC\uC2A4\uD15C\uACFC \uC5D4\uC9C4\uC73C\uB85C \uD655\uC7A5\uB429\uB2C8\uB2E4."
               }
@@ -66,7 +66,7 @@ export default function SystemsPage() {
               <div style={S.itemMeta}>{sys.meta}</div>
               <p style={S.itemDesc}>{sys.desc}</p>
               {"project" in sys && sys.project ? (
-                <div style={{ marginTop: 36 }}>
+                <div style={{ marginTop: 48 }}>
                   <div
                     style={{
                       fontSize: 12,
@@ -84,8 +84,10 @@ export default function SystemsPage() {
             </section>
           ))}
 
-          <section style={S.block}>
-            <div style={S.sectionLabel}>Engines</div>
+          <section style={{ ...S.block, paddingTop: S.sectionGap }}>
+            <div style={S.sectionDivider}>
+              <div style={S.sectionLabel}>Engines</div>
+            </div>
             {ENGINES.map((engine, idx) => (
               <div
                 key={engine.name}
@@ -94,7 +96,7 @@ export default function SystemsPage() {
                   flexDirection: "column",
                   alignItems: "center",
                   textAlign: "center",
-                  paddingTop: idx === 0 ? 120 : 132,
+                  paddingTop: idx === 0 ? S.paragraphGap : 132,
                   paddingBottom: 8,
                 }}
               >

@@ -30,15 +30,22 @@ export default function AboutPage() {
         <>
           <section style={S.pageHero}>
             <PageBrandHeader title="LNA" titleStyle={S.pageTitle} />
-            <p style={S.body}>
+            <p style={S.lead}>
               {
-                "LNA\uB294 \uC778\uAC04\uC758 \uC0DD\uAC01\u00B7\uAC10\uC815\u00B7\uC5B8\uC5B4\uB97C \uD558\uB098\uC758\n\uD30C\uB3D9\uC73C\uB85C(Wave) \uC774\uD574\uD558\uB294 \uAE30\uC5C5\uC785\uB2C8\uB2E4.\n\n\n\uC6B0\uB9AC\uB294 \uC778\uAC04\uC758 \uC2E0\uD638\uB97C \uC77D\uACE0,\n\uADF8 \uD750\uB984\uACFC \uC758\uBBF8\uB97C \uBD84\uC11D\uD574\n\uC0C8\uB85C\uC6B4 \uC778\uC9C0 \uAE30\uC220\uC744 \uC124\uACC4\uD569\uB2C8\uB2E4."
+                "LNA\uB294 \uC778\uAC04\uC758 \uC0DD\uAC01\u00B7\uAC10\uC815\u00B7\uC5B8\uC5B4\uB97C \uD558\uB098\uC758\n\uD30C\uB3D9\uC73C\uB85C(Wave) \uC774\uD574\uD558\uB294 \uAE30\uC5C5\uC785\uB2C8\uB2E4."
+              }
+            </p>
+            <p style={{ ...S.body, marginTop: S.paragraphGap }}>
+              {
+                "\uC6B0\uB9AC\uB294 \uC778\uAC04\uC758 \uC2E0\uD638\uB97C \uC77D\uACE0,\n\uADF8 \uD750\uB984\uACFC \uC758\uBBF8\uB97C \uBD84\uC11D\uD574\n\uC0C8\uB85C\uC6B4 \uC778\uC9C0 \uAE30\uC220\uC744 \uC124\uACC4\uD569\uB2C8\uB2E4."
               }
             </p>
           </section>
 
-          <section style={{ ...S.block, paddingTop: 40 }}>
-            <div style={S.sectionLabel}>Our Labs</div>
+          <section style={{ ...S.block, paddingTop: S.sectionGap }}>
+            <div style={S.sectionDivider}>
+              <div style={S.sectionLabel}>Our Labs</div>
+            </div>
             {LABS.map((lab, idx) => (
               <div
                 key={lab.name}
@@ -47,7 +54,7 @@ export default function AboutPage() {
                   flexDirection: "column",
                   alignItems: "center",
                   textAlign: "center",
-                  paddingTop: idx === 0 ? 132 : 140,
+                  paddingTop: idx === 0 ? S.paragraphGap : 140,
                   paddingBottom: 8,
                 }}
               >
