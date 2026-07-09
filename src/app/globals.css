@@ -99,3 +99,42 @@ a {
   animation: none;
   opacity: 0.62;
 }
+
+.heartbeat-wave {
+  width: 100%;
+  max-width: 420;
+  height: 20px;
+  margin-top: 18px;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.34);
+}
+
+.heartbeat-wave__track {
+  display: flex;
+  width: max-content;
+  animation: heartbeat-wave-scroll 5.5s linear infinite;
+}
+
+.heartbeat-wave__track svg {
+  display: block;
+  width: 420px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+@keyframes heartbeat-wave-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heartbeat-wave__track {
+    animation: none;
+    transform: translateX(0);
+  }
+}

@@ -113,6 +113,17 @@ export function makeStyles(isMobile: boolean) {
     color: "rgba(0,0,0,0.48)",
   };
 
+  const heroTagline: React.CSSProperties = {
+    marginTop: isMobile ? 20 : 24,
+    fontSize: isMobile ? 14.5 : 15,
+    lineHeight: 2.2,
+    letterSpacing: "0.08em",
+    color: "rgba(0,0,0,0.58)",
+    fontWeight: 400,
+    wordBreak: "keep-all",
+    maxWidth: 420,
+  };
+
   const lead: React.CSSProperties = {
     margin: `${isMobile ? 56 : 64}px 0 0`,
     fontSize: isMobile ? 14.5 : 15,
@@ -237,6 +248,7 @@ export function makeStyles(isMobile: boolean) {
     h1,
     pageTitle,
     heroMeta,
+    heroTagline,
     lead,
     body,
     quote,
