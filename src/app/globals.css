@@ -101,7 +101,6 @@ a {
 }
 
 .heartbeat-wave {
-  position: relative;
   width: 148px;
   max-width: 42vw;
   height: 20px;
@@ -110,40 +109,32 @@ a {
   color: rgba(0, 0, 0, 0.28);
 }
 
-.heartbeat-wave__pulse {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 72px;
-  height: 20px;
-  animation: heartbeat-wave-pass 3.8s ease-in-out infinite;
+.heartbeat-wave__track {
+  display: flex;
+  width: max-content;
+  animation: heartbeat-wave-scroll 4.2s linear infinite;
 }
 
-@keyframes heartbeat-wave-pass {
-  0% {
-    transform: translateX(-72px);
-    opacity: 0;
+.heartbeat-wave__track svg {
+  display: block;
+  width: 148px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+@keyframes heartbeat-wave-scroll {
+  from {
+    transform: translateX(0);
   }
 
-  12% {
-    opacity: 0.7;
-  }
-
-  88% {
-    opacity: 0.7;
-  }
-
-  100% {
-    transform: translateX(148px);
-    opacity: 0;
+  to {
+    transform: translateX(-50%);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .heartbeat-wave__pulse {
+  .heartbeat-wave__track {
     animation: none;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0.45;
+    transform: translateX(0);
   }
 }
