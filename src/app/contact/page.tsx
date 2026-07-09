@@ -2,12 +2,13 @@
 
 import PageBrandHeader from "@/components/PageBrandHeader";
 import PageShell from "@/components/PageShell";
+import SubpageHero from "@/components/SubpageHero";
 
 export default function ContactPage() {
   return (
     <PageShell>
       {(S) => (
-        <section style={S.subpageHero}>
+        <SubpageHero style={S.subpageHero} scrollTargetId="site-footer">
           <PageBrandHeader title="Contact" titleStyle={S.pageTitle} />
           <p style={S.lead}>
             {
@@ -29,7 +30,7 @@ export default function ContactPage() {
           >
             contact@lna-corp.com
           </a>
-        </section>
+        </SubpageHero>
       )}
     </PageShell>
   );

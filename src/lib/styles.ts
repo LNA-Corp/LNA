@@ -33,8 +33,15 @@ export function makeStyles(isMobile: boolean) {
   };
 
   const subpageHero: React.CSSProperties = {
-    ...hero,
     minHeight: "calc(100svh - 80px)",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    textAlign: "center",
+    padding: isMobile
+      ? `calc(36svh - ${Math.round(14.5 * 2.2 * 3)}px) 0 48px`
+      : `calc(40svh - ${Math.round(15 * 2.2 * 3)}px) 0 56px`,
   };
 
   const block: React.CSSProperties = {

@@ -2,6 +2,7 @@
 
 import PageBrandHeader from "@/components/PageBrandHeader";
 import PageShell from "@/components/PageShell";
+import SubpageHero from "@/components/SubpageHero";
 
 const SYSTEMS = [
   {
@@ -51,17 +52,21 @@ export default function SystemsPage() {
     <PageShell>
       {(S) => (
         <>
-          <section style={S.subpageHero}>
+          <SubpageHero style={S.subpageHero} scrollTargetId="systems-content">
             <PageBrandHeader title="Systems" titleStyle={S.pageTitle} />
             <p style={S.lead}>
               {
                 "LNA Corp\uC758 \uAE30\uC220\uC740 \uB2E8\uC77C\uD55C Wave Theory\n\uC704\uC5D0\uC11C \uC5EC\uB7EC \uC2DC\uC2A4\uD15C\uACFC \uC5D4\uC9C4\uC73C\uB85C \uD655\uC7A5\uB429\uB2C8\uB2E4."
               }
             </p>
-          </section>
+          </SubpageHero>
 
-          {SYSTEMS.map((sys) => (
-            <section key={sys.name} style={S.block}>
+          {SYSTEMS.map((sys, idx) => (
+            <section
+              key={sys.name}
+              id={idx === 0 ? "systems-content" : undefined}
+              style={S.block}
+            >
               <h2 style={S.itemTitle}>{sys.name}</h2>
               <div style={S.itemMeta}>{sys.meta}</div>
               <p style={S.itemDesc}>{sys.desc}</p>

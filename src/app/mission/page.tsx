@@ -2,22 +2,23 @@
 
 import PageBrandHeader from "@/components/PageBrandHeader";
 import PageShell from "@/components/PageShell";
+import SubpageHero from "@/components/SubpageHero";
 
 export default function MissionPage() {
   return (
     <PageShell>
       {(S) => (
         <>
-          <section style={S.subpageHero}>
+          <SubpageHero style={S.subpageHero} scrollTargetId="philosophy">
             <PageBrandHeader title="Mission" titleStyle={S.pageTitle} />
             <div style={S.quote}>
               {
                 "\u201CTo reveal the human mind as it truly is,\nand to bring comfort\u201D"
               }
             </div>
-          </section>
+          </SubpageHero>
 
-          <section style={{ ...S.block, paddingTop: S.sectionGap }}>
+          <section id="philosophy" style={{ ...S.block, paddingTop: S.sectionGap }}>
             <div style={S.sectionDivider}>
               <div style={S.sectionLabel}>Philosophy</div>
             </div>

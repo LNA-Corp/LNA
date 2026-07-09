@@ -11,6 +11,7 @@ export default function SiteFooter({
 }) {
   return (
     <footer
+      id="site-footer"
       style={{
         ...S.footer,
         opacity: muted ? 0.55 : 1,

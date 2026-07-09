@@ -2,6 +2,7 @@
 
 import PageBrandHeader from "@/components/PageBrandHeader";
 import PageShell from "@/components/PageShell";
+import SubpageHero from "@/components/SubpageHero";
 
 const LABS = [
   {
@@ -28,7 +29,7 @@ export default function AboutPage() {
     <PageShell>
       {(S) => (
         <>
-          <section style={S.subpageHero}>
+          <SubpageHero style={S.subpageHero} scrollTargetId="our-labs">
             <PageBrandHeader title="LNA" titleStyle={S.pageTitle} />
             <p style={S.lead}>
               {
@@ -40,9 +41,9 @@ export default function AboutPage() {
                 "\uC6B0\uB9AC\uB294 \uC778\uAC04\uC758 \uC2E0\uD638\uB97C \uC77D\uACE0,\n\uADF8 \uD750\uB984\uACFC \uC758\uBBF8\uB97C \uBD84\uC11D\uD574\n\uC0C8\uB85C\uC6B4 \uC778\uC9C0 \uAE30\uC220\uC744 \uC124\uACC4\uD569\uB2C8\uB2E4."
               }
             </p>
-          </section>
+          </SubpageHero>
 
-          <section style={{ ...S.block, paddingTop: S.sectionGap }}>
+          <section id="our-labs" style={{ ...S.block, paddingTop: S.sectionGap }}>
             <div style={S.sectionDivider}>
               <div style={S.sectionLabel}>Our Labs</div>
             </div>
