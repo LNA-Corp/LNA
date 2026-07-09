@@ -29,7 +29,7 @@ export function makeStyles(isMobile: boolean) {
     justifyContent: "flex-start",
     alignItems: "center",
     textAlign: "center",
-    padding: isMobile ? "36svh 0 96px" : "40svh 0 112px",
+    padding: isMobile ? "38svh 0 96px" : "42svh 0 112px",
   };
 
   const subpageHero: React.CSSProperties = {

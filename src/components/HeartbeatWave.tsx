@@ -1,7 +1,8 @@
 "use client";
 
+// Baseline y=12. Q(dip) -> R(up) -> S(down) -> baseline, tiled for seamless ECG sweep.
 const WAVE_PATH =
-  "M0 12 H48 L54 12 L58 4 L62 20 L66 8 L70 12 H148";
+  "M0 12 H42 L45 14.5 L49 2.5 L53 21 L57 12 H148";
 
 export default function HeartbeatWave() {
   return (

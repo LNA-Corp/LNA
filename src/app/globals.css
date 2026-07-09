@@ -104,7 +104,7 @@ a {
   width: 148px;
   max-width: 42vw;
   height: 20px;
-  margin: 16px auto 0;
+  margin: 72px auto;
   overflow: hidden;
   color: rgba(0, 0, 0, 0.28);
 }
@@ -113,6 +113,7 @@ a {
   display: flex;
   width: max-content;
   animation: heartbeat-wave-scroll 4.2s linear infinite;
+  will-change: transform;
 }
 
 .heartbeat-wave__track svg {
@@ -122,6 +123,7 @@ a {
   flex-shrink: 0;
 }
 
+/* ECG monitor sweep: new trace enters from the right, moves left. */
 @keyframes heartbeat-wave-scroll {
   from {
     transform: translateX(0);
