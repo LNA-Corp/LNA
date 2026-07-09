@@ -7,7 +7,7 @@ export default function ContactPage() {
   return (
     <PageShell>
       {(S) => (
-        <section style={{ ...S.hero, minHeight: "calc(100svh - 80px)" }}>
+        <section style={S.subpageHero}>
           <PageBrandHeader title="Contact" titleStyle={S.pageTitle} />
           <p style={S.lead}>
             {

@@ -51,7 +51,7 @@ export default function SystemsPage() {
     <PageShell>
       {(S) => (
         <>
-          <section style={S.pageHero}>
+          <section style={S.subpageHero}>
             <PageBrandHeader title="Systems" titleStyle={S.pageTitle} />
             <p style={S.lead}>
               {

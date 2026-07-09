@@ -28,7 +28,7 @@ export default function AboutPage() {
     <PageShell>
       {(S) => (
         <>
-          <section style={S.pageHero}>
+          <section style={S.subpageHero}>
             <PageBrandHeader title="LNA" titleStyle={S.pageTitle} />
             <p style={S.lead}>
               {

@@ -8,7 +8,7 @@ export default function MissionPage() {
     <PageShell>
       {(S) => (
         <>
-          <section style={S.pageHero}>
+          <section style={S.subpageHero}>
             <PageBrandHeader title="Mission" titleStyle={S.pageTitle} />
             <div style={S.quote}>
               {

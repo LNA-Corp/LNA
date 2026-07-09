@@ -29,16 +29,12 @@ export function makeStyles(isMobile: boolean) {
     justifyContent: "flex-start",
     alignItems: "center",
     textAlign: "center",
-    padding: isMobile ? "30svh 0 96px" : "34svh 0 112px",
+    padding: isMobile ? "36svh 0 96px" : "40svh 0 112px",
   };
 
-  const pageHero: React.CSSProperties = {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    textAlign: "center",
-    padding: isMobile ? "128px 0 72px" : "168px 0 96px",
+  const subpageHero: React.CSSProperties = {
+    ...hero,
+    minHeight: "calc(100svh - 80px)",
   };
 
   const block: React.CSSProperties = {
@@ -61,7 +57,6 @@ export function makeStyles(isMobile: boolean) {
     letterSpacing: "0.02em",
     color: "rgba(0,0,0,0.9)",
     fontWeight: 600,
-    fontStyle: "italic",
   };
 
   const pageTitle: React.CSSProperties = {
@@ -192,7 +187,7 @@ export function makeStyles(isMobile: boolean) {
     wrap,
     container,
     hero,
-    pageHero,
+    subpageHero,
     block,
     h1,
     pageTitle,
