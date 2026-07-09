@@ -114,9 +114,7 @@ export function makeStyles(isMobile: boolean) {
   };
 
   const heroTagline: React.CSSProperties = {
-    marginTop:
-      (isMobile ? 20 : 24) +
-      Math.round((isMobile ? 14.5 : 15) * 2.2 * 3),
+    marginTop: isMobile ? 20 : 24,
     fontSize: isMobile ? 14.5 : 15,
     lineHeight: 2.2,
     letterSpacing: "0.08em",
@@ -229,7 +227,7 @@ export function makeStyles(isMobile: boolean) {
 
   const footer: React.CSSProperties = {
     marginTop: "auto",
-    paddingTop: 56 + lineStep,
+    paddingTop: 56,
     paddingBottom: isMobile ? 18 : 24,
     color: "rgba(0,0,0,0.38)",
     fontSize: 11,
