@@ -118,7 +118,7 @@ export function makeStyles(isMobile: boolean) {
     fontSize: isMobile ? 14.5 : 15,
     lineHeight: 2.2,
     letterSpacing: "0.08em",
-    color: "rgba(0,0,0,0.58)",
+    color: "rgba(0,0,0,0.40)",
     fontWeight: 400,
     wordBreak: "keep-all",
     maxWidth: 420,
