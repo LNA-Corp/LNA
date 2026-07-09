@@ -23,7 +23,7 @@ export default function SiteFooter({
           color: muted ? "rgba(0,0,0,0.38)" : "rgba(0,0,0,0.42)",
         }}
       >
-        {"\u00A9"} {new Date().getFullYear()} LNA Corp
+        {"\u00A9"} {new Date().getFullYear()} LNA Corp. All rights reserved.
       </div>
       <div style={{ marginTop: 3 }}>
         <a
