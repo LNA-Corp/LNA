@@ -9,7 +9,7 @@ export default function MissionPage() {
     <PageShell>
       {(S) => (
         <>
-          <SubpageHero style={S.subpageHero} scrollTargetId="philosophy">
+          <SubpageHero style={S.subpageIntro} scrollTargetId="philosophy">
             <PageBrandHeader title="Mission" titleStyle={S.pageTitle} />
             <div style={S.quote}>
               {

@@ -19,10 +19,10 @@ export default function ScrollHint({
     <button
       type="button"
       aria-label="아래로 스크롤"
+      className="scroll-hint"
       onClick={scrollTo}
       style={{
-        marginTop: "auto",
-        paddingTop: 34,
+        marginTop: 34,
         fontSize: 16,
         fontWeight: 500,
         letterSpacing: "0.02em",

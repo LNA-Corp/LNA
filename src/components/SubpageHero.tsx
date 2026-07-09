@@ -9,13 +9,13 @@ export default function SubpageHero({
   children,
 }: {
   style: CSSProperties;
-  scrollTargetId: string;
+  scrollTargetId?: string;
   children: ReactNode;
 }) {
   return (
     <section style={style}>
       {children}
-      <ScrollHint targetId={scrollTargetId} />
+      {scrollTargetId ? <ScrollHint targetId={scrollTargetId} /> : null}
     </section>
   );
 }

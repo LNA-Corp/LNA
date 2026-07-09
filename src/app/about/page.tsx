@@ -29,7 +29,7 @@ export default function AboutPage() {
     <PageShell>
       {(S) => (
         <>
-          <SubpageHero style={S.subpageHero} scrollTargetId="our-labs">
+          <SubpageHero style={S.subpageIntro} scrollTargetId="our-labs">
             <PageBrandHeader title="LNA" titleStyle={S.pageTitle} />
             <p style={S.lead}>
               {

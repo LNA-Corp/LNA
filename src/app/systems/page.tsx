@@ -3,6 +3,7 @@
 import PageBrandHeader from "@/components/PageBrandHeader";
 import PageShell from "@/components/PageShell";
 import SubpageHero from "@/components/SubpageHero";
+import type { Styles } from "@/lib/styles";
 
 const SYSTEMS = [
   {
@@ -11,20 +12,30 @@ const SYSTEMS = [
     desc: "\uC778\uAC04\uC758 \uAC10\uC815\u00B7\uC5B8\uC5B4\u00B7\uC0AC\uACE0\uB97C \uD558\uB098\uC758 Wave Architecture\uB85C \uC7AC\uAD6C\uC131\uD55C\nLNA Corp \uAE30\uC220\uC758 \uADFC\uBCF8 OS.",
   },
   {
-    name: "LTS",
-    meta: "Life Thoughts System",
-    desc: "\uC0AC\uACE0\uC758 \uAD6C\uC870, \uC5B8\uC5B4\uC758 \uD328\uD134, \uC9C0\uB2A5\uC758 \uD750\uB984\uC744 \uB2E4\uB8E8\uB294 LNA \uAE30\uBC18 \uC778\uC9C0 OS.",
-    projectTitle: "Project",
-    project:
-      "LQI - Life Quotient Intelligence LTS\uC758 \uCCAB \uD504\uB85C\uC81D\uD2B8\uB85C,\n\uC0AC\uACE0\u00B7\uC5B8\uC5B4\u00B7\uCC3D\uC870\u00B7\uC9C1\uAD00\uC744 \uD30C\uB3D9 \uAE30\uBC18 \uC9C0\uD45C\uB85C \uC815\uAD50\uD558\uAC8C \uCE21\uC815\uD569\uB2C8\uB2E4.",
-  },
-  {
     name: "LSR",
     meta: "Life Self Reflection",
     desc: "\uC0AC\uB78C\uC758 \uB0B4\uBA74\uC744 \uC774\uB8E8\uB294\n\uB2E4\uC591\uD55C \uCD95\uC744 \uC77D\uC5B4\uB0B4\uACE0, \uAC10\uC815\u00B7\uAD00\uACC4\u00B7\uC2EC\uB9AC\uC758 \uD328\uD134\uC744 \uBA85\uD655\uD55C \uD30C\uB3D9 \uAD6C\uC870\uB85C \uB4DC\uB7EC\uB0B4\uB294 OS.",
-    projectTitle: "Project",
-    project:
-      "RDI - Relationship Dynamics Indicator LSR\uC758 \uCCAB \uD504\uB85C\uC81D\uD2B8\uB85C, \uAC10\uC815\u00B7\uAD00\uACC4 \uC131\uD5A5\uC744 \uD30C\uB3D9 \uAE30\uBC18\uC73C\uB85C \uBD84\uC11D\uD569\uB2C8\uB2E4.",
+    projects: [
+      {
+        title: "RDI - Relationship Dynamics Indicator",
+        desc: "LSR\uC758 \uCCAB \uD504\uB85C\uC81D\uD2B8\uB85C, \uAC10\uC815\u00B7\uAD00\uACC4 \uC131\uD5A5\uC744 \uD30C\uB3D9 \uAE30\uBC18\uC73C\uB85C \uBD84\uC11D\uD569\uB2C8\uB2E4.",
+      },
+      {
+        title: "DualPulse",
+        desc: "\uB450 \uC0AC\uB78C\uC758 \uAD00\uACC4 \uB3D9\uC5ED\uD559\uC744 \uD30C\uB3D9 \uAE30\uBC18\uC73C\uB85C \uD568\uAED8 \uBD84\uC11D\uD558\uB294 \uD504\uB85C\uC81D\uD2B8\uC785\uB2C8\uB2E4.",
+      },
+    ],
+  },
+  {
+    name: "LTS",
+    meta: "Life Thoughts System",
+    desc: "\uC0AC\uACE0\uC758 \uAD6C\uC870, \uC5B8\uC5B4\uC758 \uD328\uD134, \uC9C0\uB2A5\uC758 \uD750\uB984\uC744 \uB2E4\uB8E8\uB294 LNA \uAE30\uBC18 \uC778\uC9C0 OS.",
+    projects: [
+      {
+        title: "LQI - Life Quotient Intelligence (\uC608\uC815)",
+        desc: "LTS\uC758 \uCCAB \uD504\uB85C\uC81D\uD2B8\uB85C, \uC0AC\uACE0\u00B7\uC5B8\uC5B4\u00B7\uCC3D\uC870\u00B7\uC9C1\uAD00\uC744 \uD30C\uB3D9 \uAE30\uBC18 \uC9C0\uD45C\uB85C \uC815\uAD50\uD558\uAC8C \uCE21\uC815\uD560 \uC608\uC815\uC785\uB2C8\uB2E4.",
+      },
+    ],
   },
 ] as const;
 
@@ -47,12 +58,50 @@ const ENGINES = [
   },
 ] as const;
 
+function ProjectList({
+  S,
+  projects,
+}: {
+  S: Styles;
+  projects: ReadonlyArray<{ title: string; desc: string }>;
+}) {
+  return (
+    <div style={{ marginTop: 48 }}>
+      <div
+        style={{
+          fontSize: 12,
+          fontWeight: 600,
+          letterSpacing: "0.16em",
+          color: "rgba(0,0,0,0.42)",
+          marginBottom: 14,
+        }}
+      >
+        Project
+      </div>
+      {projects.map((project, idx) => (
+        <div key={project.title} style={{ marginTop: idx === 0 ? 0 : 28 }}>
+          <p
+            style={{
+              ...S.itemDesc,
+              marginTop: 0,
+              color: "rgba(0,0,0,0.52)",
+            }}
+          >
+            {project.title}
+          </p>
+          <p style={{ ...S.itemDesc, marginTop: 10 }}>{project.desc}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function SystemsPage() {
   return (
     <PageShell>
       {(S) => (
         <>
-          <SubpageHero style={S.subpageHero} scrollTargetId="systems-content">
+          <SubpageHero style={S.subpageIntro} scrollTargetId="systems-content">
             <PageBrandHeader title="Systems" titleStyle={S.pageTitle} />
             <p style={S.lead}>
               {
@@ -70,21 +119,8 @@ export default function SystemsPage() {
               <h2 style={S.itemTitle}>{sys.name}</h2>
               <div style={S.itemMeta}>{sys.meta}</div>
               <p style={S.itemDesc}>{sys.desc}</p>
-              {"project" in sys && sys.project ? (
-                <div style={{ marginTop: 48 }}>
-                  <div
-                    style={{
-                      fontSize: 12,
-                      fontWeight: 600,
-                      letterSpacing: "0.16em",
-                      color: "rgba(0,0,0,0.42)",
-                      marginBottom: 14,
-                    }}
-                  >
-                    {sys.projectTitle}
-                  </div>
-                  <p style={S.itemDesc}>{sys.project}</p>
-                </div>
+              {"projects" in sys && sys.projects ? (
+                <ProjectList S={S} projects={sys.projects} />
               ) : null}
             </section>
           ))}

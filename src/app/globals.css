@@ -79,3 +79,23 @@ a {
 .page-brand-header:hover {
   opacity: 0.72;
 }
+
+@keyframes scroll-hint-pulse {
+  0%,
+  100% {
+    opacity: 0.32;
+  }
+
+  50% {
+    opacity: 0.56;
+  }
+}
+
+.scroll-hint {
+  animation: scroll-hint-pulse 2.4s ease-in-out infinite;
+}
+
+.scroll-hint:hover {
+  animation: none;
+  opacity: 0.62;
+}

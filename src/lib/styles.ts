@@ -44,6 +44,17 @@ export function makeStyles(isMobile: boolean) {
       : `calc(40svh - ${Math.round(15 * 2.2 * 3)}px) 0 56px`,
   };
 
+  const subpageIntro: React.CSSProperties = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    textAlign: "center",
+    padding: isMobile
+      ? `calc(36svh - ${Math.round(14.5 * 2.2 * 3)}px) 0 72px`
+      : `calc(40svh - ${Math.round(15 * 2.2 * 3)}px) 0 88px`,
+  };
+
   const block: React.CSSProperties = {
     display: "flex",
     flexDirection: "column",
@@ -195,6 +206,7 @@ export function makeStyles(isMobile: boolean) {
     container,
     hero,
     subpageHero,
+    subpageIntro,
     block,
     h1,
     pageTitle,
