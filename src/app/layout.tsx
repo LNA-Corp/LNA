@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | LNA",
   },
   description:
-    "LNA understands human thought, emotion, and language as a single Wave.",
+    "LNA builds navigation systems for human thought. AI analyzes, LNA structures, you decide.",
 };
 
 export default function RootLayout({

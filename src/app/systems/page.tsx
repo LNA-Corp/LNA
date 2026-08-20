@@ -5,91 +5,96 @@ import PageShell from "@/components/PageShell";
 import SubpageHero from "@/components/SubpageHero";
 import type { Styles } from "@/lib/styles";
 
-const SYSTEMS = [
+const DOMAINS = [
   {
-    name: "LNA",
-    meta: "Core Theory",
-    desc: "\uC778\uAC04\uC758 \uAC10\uC815\u00B7\uC5B8\uC5B4\u00B7\uC0AC\uACE0\uB97C \uD558\uB098\uC758 Wave Architecture\uB85C \uC7AC\uAD6C\uC131\uD55C LNA Corp \uAE30\uC220\uC758 \uADFC\uBCF8 OS.",
+    name: "Relationship",
+    question:
+      "\uB098\uB294 \uC774 \uAD00\uACC4\uC5D0\uC11C \uC65C \uC774\uB807\uAC8C \uBC18\uC751\uD558\uBAE0, \uC6B0\uB9AC\uB294 \uC5B4\uB514\uB85C \uC6C0\uC9C1\uC774\uB294\uAC00?",
+    products: "RDI \u00B7 RDI-U \u00B7 DualPulse",
   },
   {
-    name: "LSR",
-    meta: "Life Self Reflection",
-    desc: "\uC0AC\uB78C\uC758 \uB0B4\uBA74\uC744 \uC774\uB8E8\uB294\n\uB2E4\uC591\uD55C \uCD95\uC744 \uC77D\uC5B4\uB0B4\uACE0, \uAC10\uC815\u00B7\uAD00\uACC4\u00B7\uC2EC\uB9AC\uC758\n\uD328\uD134\uC744\n\uBA85\uD655\uD55C \uD30C\uB3D9\uAD6C\uC870\uB85C \uB4DC\uB7EC\uB0B4\uB294 OS.",
-    projects: [
-      {
-        title: "RDI - Relationship Dynamics Indicator",
-        desc: "LSR\uC758 \uCCAB \uD504\uB85C\uC81D\uD2B8\uB85C, \uAC10\uC815\u00B7\uAD00\uACC4\n\uC131\uD5A5\uC744\n\uD30C\uB3D9 \uAE30\uBC18\uC73C\uB85C \uBD84\uC11D\uD569\uB2C8\uB2E4.",
-      },
-      {
-        title: "DualPulse",
-        desc: "\uB450 \uC0AC\uB78C\uC758 \uAD00\uACC4 \uB3D9\uC5ED\uD559\uC744 \uD30C\uB3D9 \uAE30\uBC18\uC73C\uB85C \uD568\uAED8 \uBD84\uC11D\uD558\uB294 \uD504\uB85C\uC81D\uD2B8\uC785\uB2C8\uB2E4.",
-      },
-    ],
+    name: "Desire",
+    question: "\uB098\uB294 \uC65C \uC774\uAC83\uC744 \uC6D0\uD558\uB294\uAC00?",
+    products: "GAP",
   },
   {
-    name: "LTS",
-    meta: "Life Thoughts System",
-    desc: "\uC0AC\uACE0\uC758 \uAD6C\uC870, \uC5B8\uC5B4\uC758 \uD328\uD134, \uC9C0\uB2A5\uC758 \uD750\uB984\uC744 \uB2E4\uB8E8\uB294 LNA \uAE30\uBC18 \uC778\uC9C0 OS.",
-    projects: [
-      {
-        title: "LQI - Life Quotient Intelligence (\uC608\uC815)",
-        desc: "LTS\uC758 \uCCAB \uD504\uB85C\uC81D\uD2B8\uB85C, \uC0AC\uACE0\u00B7\uC5B8\uC5B4\u00B7\uCC3D\uC870\u00B7\uC9C1\uAD00\uC744 \uD30C\uB3D9 \uAE30\uBC18 \uC9C0\uD45C\uB85C \uC815\uAD50\uD558\uAC8C \uCE21\uC815\uD560 \uC608\uC815\uC785\uB2C8\uB2E4.",
-      },
-    ],
+    name: "Decision",
+    question: "\uB098\uB294 \uC65C \uC774 \uC120\uD0DD \uC55E\uC5D0\uC11C \uBA48\uCD94\uB294\uAC00?",
+    products: "CDI",
+  },
+  {
+    name: "Repetition",
+    question:
+      "\uB098\uB294 \uC65C \uC54C\uBA74\uC11C\uB3C4 \uAC19\uC740 \uC120\uD0DD\uC73C\uB85C \uB3CC\uC544\uAC00\uB294\uAC00?",
+    products: "PSI",
+  },
+  {
+    name: "Thinking",
+    question:
+      "\uB098\uB294 \uD604\uC2E4\uACFC \uC815\uBCF4\uB97C \uC5B4\uB5BB\uAC8C \uAD6C\uC870\uD654\uD558\uACE0 \uC7AC\uAD6C\uC131\uD558\uB294\uAC00?",
+    products: "LQI (\uC608\uC815)",
   },
 ] as const;
 
-const ENGINES = [
+const STEPS = [
   {
-    name: "LNAR - Relationship",
-    desc: "\uB300\uD654 \uC18D \uAC10\uC815, \uAD00\uACC4\uC758 \uD750\uB984, \uBB38\uC7A5\uC744 \uD30C\uB3D9\uC73C\uB85C \uBD84\uC11D\uD558\uB294 \uAD00\uACC4 \uD574\uC11D \uC5D4\uC9C4.\n\uAC10\uC815\uACFC \uAD00\uACC4\uC758 \uD750\uB984\uC744\n\uD30C\uB3D9\uC73C\uB85C \uC77D\uC2B5\uB2C8\uB2E4.",
+    step: "01",
+    name: "Observe",
+    desc: "\uC0AC\uC6A9\uC790\uC758 \uC5B8\uC5B4\uC5D0\uC11C \uD604\uC7AC \uC704\uCE58\uB97C \uAD00\uCC30\uD569\uB2C8\uB2E4.",
   },
   {
-    name: "LNAL - Literary",
-    desc: "\uC2DC\u00B7\uBB38\uD559\u00B7\uC11C\uC0AC\uC758 \uC815\uC11C\uC640 \uB9AC\uB4EC\uC744 Wave \uD328\uD134\uC73C\uB85C \uD574\uC11D\uD558\uB294 \uBB38\uD559 \uBD84\uC11D \uC5D4\uC9C4.\n\uC2DC\u00B7\uBB38\uD559\uC758 \uC815\uC11C\uC640 \uAD6C\uC870\uB97C\n\uD30C\uB3D9\uC73C\uB85C \uD574\uC11D\uD569\uB2C8\uB2E4.",
+    step: "02",
+    name: "Separate",
+    desc: "\uC11C\uB85C \uB2E4\uB978 \uCE35\uC758 \uC0DD\uAC01\uC774 \uC11C\uB85C \uCBB0\uC778 \uACBD\uACC4\uB97C \uB2E4\uC2DC \uADF8\uB9BD\uB2C8\uB2E4.",
   },
   {
-    name: "LNAD - Direction",
-    desc: "\uC5D0\uB108\uC9C0 \uD750\uB984, \uD589\uB3D9 \uD328\uD134, \uC0B6\uC758 \uBC29\uD5A5\uC131\uC744 \uD30C\uB3D9\uC73C\uB85C \uBAA8\uB378\uB9C1\uD558\uB294 \uBC29\uD5A5\uC131 \uC5D4\uC9C4.\n\uD589\uB3D9\uACFC \uC5D0\uB108\uC9C0\uC758 \uBC29\uD5A5\uC131\uC744\n\uD30C\uB3D9\uC73C\uB85C \uBAA8\uB378\uB9C1\uD569\uB2C8\uB2E4.",
+    step: "03",
+    name: "Structure",
+    desc: "\uC65C \uADF8\uB7F0 \uAC00\uCE58\uAC00 \uCDA9\uB3CC\uD558\uACE0, \uC0AC\uACE0\uAC00 \uBC18\uBCF5\uB418\uB294\uC9C0 \uAD6C\uC870\uD654\uD569\uB2C8\uB2E4.",
   },
   {
-    name: "ECE - Cascade",
-    desc: "\uAC10\uC815\uC758 \uC2DC\uC791, \uBCC0\uD654\uC758 \uACB0,\n\uB300\uD654\uC758 \uD750\uB984\uC744 \uD30C\uB3D9\uC73C\uB85C \uBAA8\uB378\uB9C1\uD558\uB294\n\uC11C\uC0AC \uC5D4\uC9C4.\n\uAC10\uC815\uACFC \uC758\uBBF8\uC758 Cascade\uB97C\n\uD30C\uB3D9\uC73C\uB85C \uBAA8\uB378\uB9C1\uD569\uB2C8\uB2E4.",
+    step: "04",
+    name: "Navigate",
+    desc: "\uD604\uC7AC \uC704\uCE58\uC5D0\uC11C \uAC00\uB2A5\uD55C \uACBD\uB85C\uB97C \uBCF4\uC5EC\uC90D\uB2C8\uB2E4.",
+  },
+  {
+    step: "05",
+    name: "Decide",
+    desc: "\uC5B4\uB290 \uAE38\uC744 \uAC78\uC744\uC9C0\uB294 \uC778\uAC04\uC774 \uACB0\uC815\uD569\uB2C8\uB2E4.",
   },
 ] as const;
 
-function ProjectList({
-  S,
-  projects,
-}: {
-  S: Styles;
-  projects: ReadonlyArray<{ title: string; desc: string }>;
-}) {
+function DomainList({ S, domains }: { S: Styles; domains: typeof DOMAINS }) {
   return (
-    <div style={{ marginTop: 48, width: "100%", maxWidth: 360 }}>
-      <div
-        style={{
-          fontSize: 12,
-          fontWeight: 600,
-          letterSpacing: "0.16em",
-          color: "rgba(0,0,0,0.42)",
-          marginBottom: 14,
-        }}
-      >
-        Project
-      </div>
-      {projects.map((project, idx) => (
-        <p
-          key={project.title}
+    <>
+      {domains.map((domain, idx) => (
+        <div
+          key={domain.name}
           style={{
-            ...S.itemDesc,
-            marginTop: idx === 0 ? 0 : 28,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+            paddingTop: idx === 0 ? S.paragraphGap : 132,
+            paddingBottom: 8,
           }}
         >
-          {`${project.title}\n${project.desc}`}
-        </p>
+          <h2 style={S.itemTitle}>{domain.name}</h2>
+          <p style={S.itemDesc}>{domain.question}</p>
+          <div
+            style={{
+              marginTop: 20,
+              fontSize: 12,
+              fontWeight: 500,
+              letterSpacing: "0.1em",
+              color: "rgba(0,0,0,0.38)",
+            }}
+          >
+            {domain.products}
+          </div>
+        </div>
       ))}
-    </div>
+    </>
   );
 }
 
@@ -106,47 +111,48 @@ export default function SystemsPage() {
             <PageBrandHeader title="Systems" titleStyle={S.pageTitle} />
             <p style={S.lead}>
               {
-                "LNA Corp\uC758 \uAE30\uC220\uC740 \uB2E8\uC77C\uD55C Wave Theory\n\uC704\uC5D0\uC11C \uC5EC\uB7EC \uC2DC\uC2A4\uD15C\uACFC \uC5D4\uC9C4\uC73C\uB85C \uD655\uC7A5\uB429\uB2C8\uB2E4."
+                "LNA Corp\uC758 \uAE30\uC220\uC740 \uD558\uB098\uC758 \uC2EC\uB9AC \uC774\uB860 \uC704\uC5D0 \uC788\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.\nHuman Navigation Architecture \uC704\uC5D0\uC11C \uB2E4\uC12F \uAC1C\uC758 Domain\uC73C\uB85C \uD3BC\uCE64\uC838\uC785\uB2C8\uB2E4."
               }
             </p>
           </SubpageHero>
 
-          {SYSTEMS.map((sys, idx) => (
-            <section
-              key={sys.name}
-              id={idx === 0 ? "systems-content" : undefined}
-              style={idx === 0 ? S.contentAfterIntro : S.block}
-            >
-              {idx === 0 ? <div style={S.contentRule} aria-hidden="true" /> : null}
-              <h2 style={S.itemTitle}>{sys.name}</h2>
-              <div style={S.itemMeta}>{sys.meta}</div>
-              <p style={S.itemDesc}>{sys.desc}</p>
-              {"projects" in sys && sys.projects ? (
-                <ProjectList S={S} projects={sys.projects} />
-              ) : null}
-            </section>
-          ))}
+          <section id="systems-content" style={S.contentAfterIntro}>
+            <div style={S.contentRule} aria-hidden="true" />
+            <div style={S.sectionLabel}>Human Navigation</div>
+            <p style={{ ...S.body, marginTop: S.paragraphGapTight }}>
+              {
+                "AI analyzes \u00B7 LNA structures \u00B7 You decide\n\uACB0\uC815\uC740 \uB2F9\uC2E0\uC758 \uBABF\uC785\uB2C8\uB2E4."
+              }
+            </p>
+            {STEPS.map((item, idx) => (
+              <div
+                key={item.name}
+                style={{
+                  marginTop: idx === 0 ? S.paragraphGap : S.paragraphGapTight,
+                  maxWidth: 360,
+                  textAlign: "center",
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 12,
+                    fontWeight: 600,
+                    letterSpacing: "0.16em",
+                    color: "rgba(0,0,0,0.42)",
+                  }}
+                >
+                  {`${item.step} ${item.name}`}
+                </div>
+                <p style={{ ...S.itemDesc, marginTop: 10 }}>{item.desc}</p>
+              </div>
+            ))}
+          </section>
 
           <section style={{ ...S.block, paddingTop: S.sectionGap }}>
             <div style={S.sectionDivider}>
-              <div style={S.sectionLabel}>Engines</div>
+              <div style={S.sectionLabel}>Domains</div>
             </div>
-            {ENGINES.map((engine, idx) => (
-              <div
-                key={engine.name}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  textAlign: "center",
-                  paddingTop: idx === 0 ? S.paragraphGap : 132,
-                  paddingBottom: 8,
-                }}
-              >
-                <h2 style={S.itemTitle}>{engine.name}</h2>
-                <p style={S.itemDesc}>{engine.desc}</p>
-              </div>
-            ))}
+            <DomainList S={S} domains={DOMAINS} />
           </section>
         </>
       )}
