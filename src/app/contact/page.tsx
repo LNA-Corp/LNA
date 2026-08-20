@@ -11,7 +11,7 @@ export default function ContactPage() {
           <PageBrandHeader title="Contact" titleStyle={S.pageTitle} />
           <p style={S.lead}>
             {
-              "\uC778\uAC04\uC758 \uC0DD\uAC01\uACFC \uAD00\uACC4, \uC6A9\uB9D0, \uC120\uD0DD\uC744 \uAD6C\uC870\uD654\uD558\uACE0 \uC788\uB2E4\uBA74\n\uC5B8\uC81C\uB4E0 \uC5F0\uACB0\uC744 \uD658\uC601\uD569\uB2C8\uB2E4."
+              "\uAC10\uC815, \uC5B8\uC5B4, \uC0DD\uAC01\uC758 \uD30C\uB3D9\uC744 \uD0D0\uAD6C\uD558\uACE0 \uC788\uB2E4\uBA74\n\uC5B8\uC81C\uB4E0 \uC5F0\uACB0\uC744 \uD658\uC601\uD569\uB2C8\uB2E4."
             }
           </p>
           <a

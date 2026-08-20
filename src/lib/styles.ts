@@ -115,17 +115,6 @@ export function makeStyles(isMobile: boolean) {
     color: "rgba(0,0,0,0.48)",
   };
 
-  const heroHook: React.CSSProperties = {
-    marginTop: isMobile ? 28 : 32,
-    fontSize: isMobile ? 15 : 16,
-    lineHeight: 1.85,
-    letterSpacing: "0.06em",
-    color: "rgba(0,0,0,0.62)",
-    fontWeight: 500,
-    wordBreak: "keep-all",
-    maxWidth: 420,
-  };
-
   const heroTagline: React.CSSProperties = {
     marginTop: isMobile ? 20 : 24,
     fontSize: isMobile ? 14.5 : 15,
@@ -133,28 +122,6 @@ export function makeStyles(isMobile: boolean) {
     letterSpacing: "0.08em",
     color: "rgba(0,0,0,0.40)",
     fontWeight: 400,
-    wordBreak: "keep-all",
-    maxWidth: 420,
-    whiteSpace: "pre-line",
-  };
-
-  const heroSteps: React.CSSProperties = {
-    marginTop: isMobile ? 32 : 40,
-    fontSize: isMobile ? 12.5 : 13,
-    lineHeight: 1.9,
-    letterSpacing: "0.14em",
-    color: "rgba(0,0,0,0.48)",
-    fontWeight: 500,
-    maxWidth: 420,
-  };
-
-  const heroBoundary: React.CSSProperties = {
-    marginTop: isMobile ? 16 : 18,
-    fontSize: isMobile ? 13 : 13.5,
-    lineHeight: 1.75,
-    letterSpacing: "0.1em",
-    color: "rgba(0,0,0,0.52)",
-    fontWeight: 500,
     wordBreak: "keep-all",
     maxWidth: 420,
   };
@@ -283,10 +250,7 @@ export function makeStyles(isMobile: boolean) {
     h1,
     pageTitle,
     heroMeta,
-    heroHook,
     heroTagline,
-    heroSteps,
-    heroBoundary,
     lead,
     body,
     quote,
